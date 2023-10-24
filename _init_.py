@@ -9,11 +9,11 @@ from cryptography.fernet import Fernet
 import base64
 
 # Define directories
-KEYS_DIR = os.path.join(os.path.dirname(_file_), 'keys')
+KEYS_DIR = os.path.join(os.path.dirname(__file__), 'keys')
 PRIVATE_KEY_DIR = os.path.join(KEYS_DIR, 'private_keys')
 PUBLIC_KEY_DIR = os.path.join(KEYS_DIR, 'public_keys')
-DATA_DIR = os.path.join(os.path.dirname(_file_), 'data')
-ENCRYPTED_DATA_PATH = os.path.join(os.path.dirname(_file_), 'encrypted_data.bin')
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+ENCRYPTED_DATA_PATH = os.path.join(os.path.dirname(__file__), 'encrypted_data.bin')
 
 # Function to create a directory if it doesn't exist
 def create_directory(directory):
@@ -250,5 +250,5 @@ def main():
         else:
             print("Invalid choice. Please select a valid option.")
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     main()
