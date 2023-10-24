@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
+from . import views
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('crypticq/', include('crypticq.urls')),
-   
+     path('create_user/', views.create_user_view, name='create_user'),
+    path('store_information/', views.store_information_view, name='store_information'),
+    path('retrieve_information/', views.retrieve_information_view, name='retrieve_information'),
 ]
+   
