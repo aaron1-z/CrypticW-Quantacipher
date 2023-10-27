@@ -1,4 +1,3 @@
-# CrypticW/utils.py
 import os
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.backends import default_backend
@@ -134,11 +133,7 @@ def hash_password(password, salt):
     return Fernet(base64.urlsafe_b64encode(key))
 
 # Create user credentials (username, hashed password, and keys)
-def create_user_credentials():
-    username = input("Enter a username: ")
-    print(f"Debug: Captured username: {username}")
-    password = getpass("Enter a password: ")
-
+def create_user_credentials(username, password):
     salt = os.urandom(16)
     fernet = hash_password(password, salt)
     hashed_password = fernet.encrypt(password.encode()).decode()
