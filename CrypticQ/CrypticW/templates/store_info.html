@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Information</title>
+</head>
+<body>
+    <h1>Store Information</h1>
+    <form method="post" action="{% url 'store_information' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <label for="data">Data:</label>
+        <textarea id="data" name="data" required></textarea><br>
+        <button type="submit">Store Information</button>
+    </form>
+</body>
+</html>
